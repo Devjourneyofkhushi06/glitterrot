@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="A responsive browser chatbot with instant text replies.">
+	<title>Glitter Chatbot</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<main class="app-shell">
+		<section class="chat-card" aria-label="Glitter chatbot">
+			<!-- The header contains identity, connection status, and the theme control. -->
+			<header class="chat-header">
+				<div class="brand-mark" aria-hidden="true"><img src="assets/glitter-emoji.png" alt=""></div>
+				<div>
+					<p class="eyebrow">Your digital sidekick</p>
+					  <h1>Glitter</h1>
+				</div>
+				<div class="online-status"><span></span> Online</div>
+				<button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode" aria-pressed="false">
+					<svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+					<svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.8A8.5 8.5 0 0 1 9.2 3.5 8.5 8.5 0 1 0 20.5 14.8Z"/></svg>
+				</button>
+			</header>
+
+			<!-- The body keeps the conversation, suggestions, and composer in one flow. -->
+			<div class="chat-body">
+				<div class="welcome-copy">
+					<p class="date-label">Today</p>
+					<h2>What can I help you with?</h2>
+					<p>Ask me anything. I will do my best to point you in the right direction.</p>
+				</div>
+
+				<!-- aria-live lets screen readers announce newly added replies. -->
+				<div id="messages" class="messages" aria-live="polite" aria-label="Chat messages">
+					<article class="message bot-message">
+						<div class="avatar" aria-hidden="true"><img src="assets/glitter-emoji.png" alt=""></div>
+						<div class="bubble">
+							  <p>Hi there! I am Glitter. Try asking about the weather, a joke, or what I can do.</p>
+							<time datetime="">Just now</time>
+						</div>
+					</article>
+				</div>
+
+				<div class="quick-prompts" aria-label="Suggested messages">
+					<button type="button" class="prompt-button">What can you do?</button>
+					<button type="button" class="prompt-button">Tell me a joke</button>
+					<button type="button" class="prompt-button">How are you?</button>
+				</div>
+
+				<form id="chat-form" class="composer">
+					<label class="sr-only" for="message-input">Type your message</label>
+					<input id="message-input" type="text" placeholder="Type your message..." autocomplete="off" maxlength="500">
+					<button class="send-button" type="submit" aria-label="Send message" title="Send message">
+						<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+					</button>
+				</form>
+				<p class="input-hint">Press Enter to send</p>
+			</div>
+		</section>
+	</main>
+	<script src="script.js"></script>
+</body>
+</html>
